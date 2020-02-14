@@ -1,0 +1,20 @@
+UI Click:
+	In the main scene, the user will want to click on parts of the UI (not buttons) to 	trigger an action.
+
+To Move:
+	User clicks on the move button
+	UI highlights movable grids
+	User clicks on target grid
+	Entity is at Point() - x1,y1
+	location mapping carries a points that are occupied
+	Entity asks to move to within move limits to x2,y2
+	Controller checks if x2,y2 empty
+	If yes updates location mapping
+	If no, returns no to entity, location mapping is not updated
+	
+To Action:
+	Entity checks if actionable in range
+	entity asks to send action
+	controller takes action and observes target
+	if target valid resolve action
+	if target invalid return no to entity
