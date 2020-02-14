@@ -55,7 +55,8 @@
 	User will have opportunity to move to main menu.
 	Upon completion of user entity a new activity will be intialized and begun.
 	*** User will be presented with a sheet that reflects current selected information 
-		Note: this probably will need to involve some sort of latex/json and may need to wait until core 		is finished. A simple print of a user entity object might suffice.
+		Note: this probably will need to involve some sort of latex/json and may need to wait until core is finished. 
+		A simple print of a user entity object might suffice.
 
 	Stats:
 		Scene shall generate a single random array of stats on start
@@ -114,6 +115,7 @@
 	Scene shall render User Entity Position
 	Scene shall render Non-User Entity Positions
 	Scene shall function as a graphical display of activity state
+	Scene shall function as input gatherer for actions, i.e move, use item, interact, etc.
 
 4. Main Activity : 
 	Main activity will be static, that is, it will be scripted rather than procedural.
