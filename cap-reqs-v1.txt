@@ -122,12 +122,12 @@
 	Shall contain entity positions
 	Shall contain entity objects
 
-4. Main Controller: 
+5. Main Controller: 
 	Shall move entities
 	Shall govern interactions between entities and environment
 	Shall govern interactions between entities
 
-5. Entities:
+6. Entities:
 	Shall contain stats
 	Shall have the ability to move
 	Non User entities shall contain primitive AI logic
