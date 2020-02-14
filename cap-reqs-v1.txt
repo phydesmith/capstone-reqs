@@ -1,0 +1,144 @@
+1. User starts app
+	Note: can use 'X' to exit app, but will not save or ensure graceful shutdown
+
+2. User is presented with a main gui screen with the options of:
+	The main gui screen is the 'lobby' or place where all parts of the app can be accessed.
+	Resume, Load and New All will lead to an 'Active Activity'
+
+	Functions presented in order: (see relavant section)
+	-2.a Resume
+		-Only clickable when an active activity is loaded
+		-Returns the user to the active activity
+	-2.b Save
+		-Only clickable with an active activity
+		-Must save user entity
+		-May save user progress
+	-2.c Load
+		-Always clickable
+		-Loads user entity
+		-Loads main activity
+		-May Load user progress
+		-Will overwrite current active activity
+	-2.d New
+		-Always clickable
+		-Creates new user entity and new main activity
+		-Will overwrite current active activity
+	-2.e Exit
+		-Ends the application
+		-Does not save user entity or progress
+2.a Resume:
+	Shall return user to 'Active Activity' in same state as it was left
+
+2.b Save:
+	Current	User Entity and Active Activity State shall be saved to an external file
+		Note: this shall be text based until core is completed
+	Current User Entity relavant information shall include:
+		-Stats
+		-Archetype
+		-Background
+		-Skills
+		-Entity Items
+		-Details
+	Current Active Activity State shall include:
+		Active User and Non-User Entities
+		Entity Locations
+
+2.c Load:
+	Reads external save file and loads information to create an 'Active Activity'
+	Shall include saved User Entity and Saved 'Active Activity'
+	Shall overwrite current 'Active Activity"
+
+
+2.d New User Entity Generation:
+	User is presented with a sequence of scenes to generate user entity.
+	User will have opportunity to move to previous part of sequence, but will erase progress.
+	User will have opportunity to move to main menu.
+	Upon completion of user entity a new activity will be intialized and begun.
+	*** User will be presented with a sheet that reflects current selected information 
+		Note: this probably will need to involve some sort of latex/json and may need to wait until core 		is finished. A simple print of a user entity object might suffice.
+
+	Stats:
+		Scene shall generate a single random array of stats on start
+		Scene shall have a single array of standardized stats on start
+		User must choose between random or standardized
+		User shall be able to assign stats as needed
+		Modifiers shall be displayed as stats are assigned
+
+	Archetype:
+		User shall be offered several options to choose from
+		Each archetype will have a small explanation
+			Note: per deliverables a single archetype will be available until core is completed
+
+	Background:
+		User is offered background which will affect skills and may affect starting circumstances
+			Note: at most two backgrounds will be available until core is completed
+
+	Skills:
+		Skills based on archetype and background will be available to choose
+		User must choose skills allotted
+		Skills shall show relevant stat it uses
+
+	Entity Items:
+		User shall be presented with sets of starting entity items to choose
+
+	User Entity Details:
+		User shall be able to set name of user entity
+
+2.e Exit:
+	Shall close the application without saving User entity or 'Active Activity' state
+	Will ensure application is closed gracefully
+		Note: Regarding any application operations or systems that are sensitive to corruption
+
+3. Scene Types(View):
+	The active activity will be where much of the User, User Entity and Application interaction happens.
+	There will be two types of 'Scenes' that represent the main activity.
+
+	Scene Types:
+		-3.a Expository:
+			Used to set the general tone of activity.
+		-3.b Interactive:
+			Governed by a loop
+			Used to present interactive challenges to user entity in the form of:
+				Non User Entities
+				Skill Checks
+				Item
+	
+3.a Expository Scene:
+	Scene shall have an image box for images to help set tone of activity.
+	Scene shall have a text box to display flavor text
+	Scene shall have the ability to move activity state 'forward'
+	Scene shall have the ability to move app state to 'main menu' while keeping activity state
+
+3.b Interactive Scene:
+	Scene shall have a grid-based graphical layout
+	Scene shall render User Entity Position
+	Scene shall render Non-User Entity Positions
+	Scene shall function as a graphical display of activity state
+
+4. Main Activity : 
+	Main activity will be static, that is, it will be scripted rather than procedural.
+		Note: The idea of procedural generation may be addressed after core is completed.
+	Main activity represents a 'story' and therefore will have a certain amount of linearity.
+	Shall contain entity positions
+	Shall contain entity objects
+
+4. Main Controller: 
+	Shall move entities
+	Shall govern interactions between entities and environment
+	Shall govern interactions between entities
+
+5. Entities:
+	Shall contain stats
+	Shall have the ability to move
+	Non User entities shall contain primitive AI logic
+
+	
+
+	
+
+
+
+	
+	
+	
+
